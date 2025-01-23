@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ahmad Kokni</h1>
+    <button id="cancel">Cancel</button>
+</body>
+<script>
+    const sayAhmad = function(){
+        console.log("Ahmad");
+    }
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "JS Series";
+    }
+
+    const changeName = setTimeout(changeText,2000);
+
+    document.querySelector('#cancel').addEventListener('click', function(){
+        clearTimeout(changeName);
+        console.log("Stoped!");
+    })
+    // clearTimeout(changeName).addEventListener('click', function(){
+    //     clearTimeout(changeName);
+    //     console.log("Stoped!")
+    // })
+</script>
+</html>

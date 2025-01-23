@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events_Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <ul id="images">
+            <li><img src="img/cat_1.jpg" id="cat" alt=""></li>
+            <li><img src="img/owl_1.jpeg" id="owl" alt=""></li>
+            <li><img src="img/egale.jpeg" id="eagle" alt=""></li>
+            <li><img src="img/dragon.jpeg" id="dragon" alt=""></li>
+            <li> <a href="https://google.com" id="google"> Google </a> </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // documnet.getElementById('cat').onclick = function(){
+    //     alert("owl")
+    // }
+    // type, timestamp, defaultPrevented, target, toElement, srcElement, currentElement, clientX, clientY, screenX, screenY, altKey, ctrKey, shift, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside the ul");    
+    // },  true)
+
+    // document.getElementById('owl').addEventListener('click',
+    // function(e){
+    //     console.log("Owl clicked");    
+    //     e.stopPropagation()
+    // }, true)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("Google Clicked!");
+    // }, false)
+
+
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+            // removeIt.parentNode.removeChild(removeIt);
+        }
+    }, false)
+</script>
+</html>

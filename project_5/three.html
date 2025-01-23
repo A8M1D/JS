@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ahmad Kokni</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let intervalId;
+
+        const sayDate = function(str) {
+            console.log(str, Date.now());
+        }
+
+        const start = function() {
+            if (!intervalId) {
+                intervalId = setInterval(sayDate, 1000, "Hi");
+            }
+        }
+
+        const stop = function() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null; 
+            }
+        }
+
+        document.getElementById("start").onclick = start;
+        document.getElementById("stop").onclick = stop;
+    </script>
+</body>
+</html>
+<!-- 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ahmad Kokni</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  let intervalId;
+  const sayDate = function(str){
+    console.log(str, Date.now());
+  }
+  const start = function(){
+    if(!intervalId){
+      intervalId = setInterval(sayDate, 1000, "Hi!");
+    }
+  }
+  const stop = function(){
+    if(intervalId){
+      clearInterval(intervalId);
+      intervalId=null;
+    }
+  }
+  document.getElementById("start").onclick = start;
+  document.getElementById("stop").onclick = stop;
+
+</script>
+</html> -->
